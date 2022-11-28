@@ -15,6 +15,10 @@ public class GameResult {
         OutputView.printResult(ballCount, strikeCount);
     }
 
+    public boolean isSuccess() {
+        return strikeCount == 3;
+    }
+
     @Override
     public String toString() {
         return "GameResult{" +
