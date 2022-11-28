@@ -3,10 +3,17 @@ package baseball.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import static baseball.validator.NumbersValidator.*;
+
 public class Numbers {
     private final List<Integer> numbers;
 
     public Numbers(String numbers) {
+        validateNonNumeric(numbers);
+        validationLength(numbers);
+        validationDuplicate(numbers);
+        validationRange(numbers);
+
         this.numbers = transformInputNumbers(numbers);
     }
 
@@ -17,6 +24,4 @@ public class Numbers {
         }
         return transformNumbers;
     }
-
-
 }
