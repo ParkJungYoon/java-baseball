@@ -9,7 +9,7 @@ public class Numbers {
     private List<Integer> numbers;
 
     public Numbers() {
-        GenerateRandomNumbers generateRandomNumbers = new GenerateRandomNumbers();
+        GenerateRandomNumbersImple generateRandomNumbers = new GenerateRandomNumbersImple();
         this.numbers = generateRandomNumbers.generate();
     }
 
