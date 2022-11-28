@@ -6,15 +6,20 @@ import java.util.List;
 import static baseball.validator.NumbersValidator.*;
 
 public class Numbers {
-    private final List<Integer> numbers;
+    protected List<Integer> numbers;
 
-    public Numbers(String numbers) {
-        validateNonNumeric(numbers);
-        validationLength(numbers);
-        validationDuplicate(numbers);
-        validationRange(numbers);
+    public Numbers() {
+        GenerateRandomNumbers generateRandomNumbers = new GenerateRandomNumbers();
+        this.numbers = generateRandomNumbers.generate();
+    }
 
-        this.numbers = transformInputNumbers(numbers);
+    public Numbers(String input) {
+        validateNonNumeric(input);
+        validationLength(input);
+        validationDuplicate(input);
+        validationRange(input);
+
+        this.numbers = transformInputNumbers(input);
     }
 
     private List<Integer> transformInputNumbers(String input) {
