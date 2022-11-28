@@ -30,7 +30,6 @@ public class Numbers {
         return transformNumbers;
     }
 
-    // 볼 개수랑 스트라이크 개수 받아와서 result에 저장하는 메서드
     public GameResult compareToNumbers(Numbers inputNumbers) {
         return new GameResult(countBall(inputNumbers), countStrike(inputNumbers));
     }
